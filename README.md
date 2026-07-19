@@ -12,9 +12,6 @@ Built following the SkillWallet AI/ML Capstone structure using React, FastAPI, S
 
 **Demo Video:** https://drive.google.com/file/d/1-UngA1mqCgYKpksgnnR0BQMAwPEaXRWd/view?usp=drivesdk
 
-Example:
-
-Demo Video: https://youtu.be/your-demo-video
 
 ---
 
