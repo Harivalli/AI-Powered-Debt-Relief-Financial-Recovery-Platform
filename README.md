@@ -1,140 +1,306 @@
-# FinRelief AI — AI-Powered Debt Relief & Financial Recovery Platform
+# 💰 FinRelief AI — AI-Powered Debt Relief & Financial Recovery Platform
 
-A full-stack web application that helps users track debts and expenses,
-understand their financial health, and get AI-generated guidance on the
-fastest path to becoming debt-free.
+A full-stack AI-powered financial recovery platform that helps users track debts and expenses, understand their financial health, and receive personalized AI-generated guidance to become debt-free.
 
-Built to the SkillWallet AI/ML capstone structure: React (Vite) frontend,
-FastAPI backend, SQLite database, JWT authentication, and Google Gemini
-for AI features.
+Built following the SkillWallet AI/ML Capstone structure using React, FastAPI, SQLite, JWT Authentication, and Google Gemini AI.
 
 ---
 
-## Tech Stack
+## 🌐 Live Demo
 
-**Frontend:** React.js (Vite), React Router, Axios, Recharts, react-icons
-**Backend:** FastAPI, SQLAlchemy, Pydantic, JWT (python-jose), bcrypt
-**Database:** SQLite (swap `DATABASE_URL` for PostgreSQL in production)
-**AI/ML:** Google Gemini API, rule-based Financial Health Score engine
-**Reports:** ReportLab (PDF generation)
-**Deployment target:** Render (backend), Vercel or Render Static Site (frontend)
+**Website:** https://finrelief-ai-frontend.onrender.com
 
-## Project Structure
+**Demo Video:** https://drive.google.com/file/d/1-UngA1mqCgYKpksgnnR0BQMAwPEaXRWd/view?usp=drivesdk
+
+Example:
+
+Demo Video: https://youtu.be/your-demo-video
+
+---
+
+# 📸 Application Preview
+
+> Add screenshots of your application here.
+
+- Login Page
+- Dashboard
+- Debt Management
+- Expense Tracker
+- AI Financial Assistant
+- Reports
+
+---
+
+# 🚀 Tech Stack
+
+### Frontend
+- React.js (Vite)
+- React Router
+- Axios
+- Recharts
+- React Icons
+
+### Backend
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- JWT Authentication (python-jose)
+- bcrypt Password Hashing
+
+### Database
+- SQLite
+- Easily configurable for PostgreSQL
+
+### AI & Machine Learning
+- Google Gemini API
+- Rule-based Financial Health Score Engine
+- AI Debt Analysis
+- AI Financial Assistant
+
+### Reports
+- ReportLab (PDF Generation)
+
+### Deployment
+- Frontend: Render
+- Backend: Render
+
+---
+
+# 📂 Project Structure
 
 ```
 finrelief-ai/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py              # FastAPI app entrypoint
-│   │   ├── config.py            # Settings loaded from .env
-│   │   ├── database.py          # SQLAlchemy engine/session
-│   │   ├── models.py            # DB tables (Users, Debts, Expenses, etc.)
-│   │   ├── schemas.py           # Pydantic request/response models
-│   │   ├── auth.py              # JWT + password hashing
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── auth.py
 │   │   ├── ai/
-│   │   │   ├── gemini_client.py     # Gemini wrapper + offline fallback
-│   │   │   └── financial_score.py   # Health score + repayment planner logic
+│   │   │   ├── gemini_client.py
+│   │   │   └── financial_score.py
 │   │   └── routers/
-│   │       ├── auth.py          # Register / login / me
-│   │       ├── profile.py       # Financial profile CRUD
-│   │       ├── debts.py         # Debt CRUD
-│   │       ├── expenses.py      # Expense CRUD
-│   │       ├── dashboard.py     # Aggregated dashboard summary
-│   │       ├── ai.py            # AI analysis, chat, score, repayment plan
-│   │       └── reports.py       # PDF report generation
+│   │       ├── auth.py
+│   │       ├── profile.py
+│   │       ├── debts.py
+│   │       ├── expenses.py
+│   │       ├── dashboard.py
+│   │       ├── ai.py
+│   │       └── reports.py
 │   ├── requirements.txt
 │   └── .env.example
+│
 └── frontend/
     ├── src/
-    │   ├── api/                 # Axios client + endpoint functions
-    │   ├── context/AuthContext.jsx
-    │   ├── components/          # AppLayout, ProtectedRoute, ClimbLine
-    │   └── pages/               # Login, Register, Dashboard, Debts,
-    │                             # Expenses, AIAnalysis, RepaymentPlanner,
-    │                             # Reports, Account, ProfileSetup
-    ├── index.css                 # Design tokens + all component styles
+    │   ├── api/
+    │   ├── context/
+    │   ├── components/
+    │   └── pages/
+    ├── index.css
     └── package.json
 ```
 
-## Database Tables
+---
 
-`users`, `financial_profiles`, `debts`, `expenses`, `ai_reports`,
-`financial_scores`, `repayment_plans` — matching the SkillWallet schema shape.
+# 🗄️ Database Tables
 
-## Features Implemented
+- Users
+- Financial Profiles
+- Debts
+- Expenses
+- AI Reports
+- Financial Scores
+- Repayment Plans
 
-- **Authentication** — register, login, JWT-protected routes, logout
-- **Dashboard** — income, expenses, savings, debt, credit utilization,
-  financial health score, spending-by-category chart, debt-balance chart
-- **Financial Profile** — income, expenses, savings, employment, dependents, goals
-- **Debt Management** — full CRUD, status badges (active/overdue/closed)
-- **Expense Tracker** — categorized logging + pie chart breakdown
-- **AI Debt Analysis** — Gemini-generated summary, risk flags, suggestions
-- **AI Financial Assistant** — chat interface grounded in the user's own data
-- **Financial Health Score** — 0–100 score from debt-to-income, expense
-  ratio, and savings rate, with Excellent/Good/Average/Poor rating
-- **Repayment Planner** — Snowball vs. Avalanche strategy simulation with
-  month-by-month payoff projection and estimated debt-free date
-- **Reports** — downloadable one-page PDF financial summary
+---
 
-### AI offline demo mode
+# ✨ Features
 
-If `GEMINI_API_KEY` is left blank in `backend/.env`, the AI analysis and
-chat endpoints still respond (with a clearly labeled placeholder message)
-so the app is fully demoable without an API key. Add a real key to get
-live Gemini-generated responses.
+## 🔐 User Authentication
 
-## Running Locally
+- User Registration
+- Secure Login
+- JWT Authentication
+- Protected Routes
+- Logout
 
-### Backend
+---
+
+## 📊 Dashboard
+
+- Total Income
+- Total Expenses
+- Total Savings
+- Total Debt
+- Credit Utilization
+- Financial Health Score
+- Spending Analysis
+- Debt Distribution Charts
+
+---
+
+## 👤 Financial Profile
+
+Users can manage:
+
+- Monthly Income
+- Monthly Expenses
+- Savings
+- Employment Status
+- Dependents
+- Financial Goals
+
+---
+
+## 💳 Debt Management
+
+- Add Debts
+- Update Debts
+- Delete Debts
+- Track Loan Status
+- Active / Closed / Overdue Indicators
+
+---
+
+## 💸 Expense Tracker
+
+- Categorized Expenses
+- Expense History
+- Spending Breakdown
+- Pie Chart Visualization
+
+---
+
+## 🤖 AI Debt Analysis
+
+Google Gemini analyzes financial information and provides:
+
+- Personalized Financial Advice
+- Debt Risk Analysis
+- Spending Insights
+- Saving Recommendations
+
+---
+
+## 💬 AI Financial Assistant
+
+Interactive chatbot that answers financial questions using the user's own financial data.
+
+---
+
+## 📈 Financial Health Score
+
+Generates a score between **0–100** based on:
+
+- Debt-to-Income Ratio
+- Expense Ratio
+- Savings Rate
+
+Ratings:
+
+- Excellent
+- Good
+- Average
+- Poor
+
+---
+
+## 📅 Repayment Planner
+
+Supports two repayment strategies:
+
+- Snowball Method
+- Avalanche Method
+
+Provides:
+
+- Month-wise Repayment Plan
+- Estimated Debt-Free Date
+- Debt Reduction Timeline
+
+---
+
+## 📄 PDF Financial Report
+
+Generate and download a professional financial summary report.
+
+---
+
+## 📴 Offline AI Demo Mode
+
+If the `GEMINI_API_KEY` is not configured, the application switches to an offline demo mode with placeholder AI responses, ensuring all features remain demonstrable.
+
+---
+
+# ⚙️ Installation
+
+## Backend
 
 ```bash
 cd backend
-python3 -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+
 pip install -r requirements.txt
-cp .env.example .env            # add your GEMINI_API_KEY if you have one
+
+cp .env.example .env
+
+# Add your GEMINI_API_KEY
+
 uvicorn app.main:app --reload --port 8000
 ```
 
-API docs available at `http://localhost:8000/docs`.
+API Documentation:
 
-### Frontend
+```
+http://localhost:8000/docs
+```
+
+---
+
+## Frontend
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
-App runs at `http://localhost:5173` and talks to the backend at the URL in
-`frontend/.env` (`VITE_API_URL`, defaults to `http://localhost:8000`).
+---
 
-## Deployment
+# 🎯 Future Enhancements
 
-- **Backend → Render:** create a new Web Service from this repo's
-  `backend/` folder, build command `pip install -r requirements.txt`,
-  start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Set
-  `SECRET_KEY`, `GEMINI_API_KEY`, and `FRONTEND_ORIGINS` as environment
-  variables in the Render dashboard.
-- **Frontend → Vercel or Render Static Site:** build command
-  `npm run build`, output directory `dist`. Set `VITE_API_URL` to your
-  deployed backend URL.
+- Credit Score Prediction
+- Loan Eligibility Prediction
+- OCR-based Bank Statement Analysis
+- Voice-enabled AI Assistant
+- Investment Recommendations
+- Multilingual Support
+- Email Notifications
+- Advanced Financial Forecasting
 
-## Development Roadmap (as planned)
+---
 
-1. **Project Setup** — repo, Vite frontend, FastAPI backend, SQLite, Git ✅
-2. **User Management** — registration, login, JWT, protected routes ✅
-3. **Core Financial Features** — profile, debts, expenses, dashboard ✅
-4. **AI Features** — Gemini integration, analysis, chat assistant ✅
-5. **Smart Planning** — health score, snowball/avalanche planner ✅
-6. **Reports & Deployment** — PDF export, deploy frontend + backend ⬜ (deploy is a manual step on your Render/Vercel accounts)
+# 👩‍💻 Author
 
-## Notes
+**Jagadeeswari Penumarthi**
 
-- The Financial Health Score uses transparent, explainable rules (not a
-  black-box model) so it's easy to justify in a report or demo. It can be
-  swapped for a trained scikit-learn model later without changing the API.
-- Passwords are hashed with bcrypt directly (not passlib) to avoid a known
-  passlib/bcrypt 4.x compatibility bug.
-- CORS origins are configurable via `FRONTEND_ORIGINS` in `backend/.env`.
+B.Tech – Computer Science and Business Systems
+
+Vishnu Institute of Technology
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
