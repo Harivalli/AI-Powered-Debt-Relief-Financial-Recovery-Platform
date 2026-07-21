@@ -290,7 +290,7 @@ npm run dev
 
 # 👩‍💻 Author
 
-**Jagadeeswari Penumarthi**
+**Ketha Hari Valli**
 
 B.Tech – Computer Science and Business Systems
 
